@@ -1,0 +1,24 @@
+import java.util.*;
+
+public class BookMart {
+    static Scanner sc = new Scanner(System.in);
+
+    static class Book {
+        int id, stock;
+        String title, author, category;
+        double price;
+
+        Book(int id, String title, String author,
+             String category, double price, int stock) {
+            this.id = id;
+            this.title = title;
+            this.author = author;
+            this.category = category;
+            this.price = price;
+            this.stock = stock;
+        }
+    }
+
+    static ArrayList<Book> books = new ArrayList<>();
+    static ArrayList<Book> cart = new ArrayList<>();
+    static ArrayList<Integer> quantities = new ArrayList<>();
