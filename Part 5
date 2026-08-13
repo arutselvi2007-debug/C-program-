@@ -1,0 +1,27 @@
+static void viewCart() {
+        if (cart.isEmpty()) {
+            System.out.println("\nCart is empty!");
+            return;
+        }
+
+        double total = 0;
+
+        System.out.println("\n========== YOUR CART ==========");
+
+        for (int i = 0; i < cart.size(); i++) {
+            Book b = cart.get(i);
+            int qty = quantities.get(i);
+
+            double subtotal = b.price * qty;
+            total += subtotal;
+
+            System.out.println(
+                b.title +
+                " | Quantity: " + qty +
+                " | Subtotal: Rs." + subtotal
+            );
+        }
+
+        System.out.println("--------------------------------");
+        System.out.println("Total Amount: Rs." + total);
+    }
