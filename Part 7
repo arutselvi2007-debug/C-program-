@@ -1,0 +1,23 @@
+static void reviewBook() {
+        sc.nextLine();
+
+        System.out.print("\nEnter book name: ");
+        String name = sc.nextLine();
+
+        System.out.print("Give rating (1-5): ");
+        int rating = sc.nextInt();
+
+        sc.nextLine();
+
+        System.out.print("Enter your comment: ");
+        String comment = sc.nextLine();
+
+        if (rating >= 1 && rating <= 5) {
+            System.out.println("\nReview submitted successfully!");
+            System.out.println("Book: " + name);
+            System.out.println("Rating: " + rating + "/5");
+            System.out.println("Comment: " + comment);
+        } else {
+            System.out.println("Invalid rating!");
+        }
+    }
