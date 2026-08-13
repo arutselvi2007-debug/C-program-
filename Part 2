@@ -1,0 +1,13 @@
+static void addBooks() {
+        books.add(new Book(1, "Java Programming",
+                "Herbert Schildt", "Programming", 450, 10));
+
+        books.add(new Book(2, "Python Basics",
+                "Mark Lutz", "Programming", 400, 8));
+
+        books.add(new Book(3, "Data Science",
+                "John Smith", "Data Science", 550, 5));
+
+        books.add(new Book(4, "Artificial Intelligence",
+                "Stuart Russell", "AI", 650, 6));
+    }
