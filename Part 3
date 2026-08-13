@@ -1,0 +1,42 @@
+static void displayBooks() {
+        System.out.println("\n========== AVAILABLE BOOKS ==========");
+
+        for (Book b : books) {
+            System.out.println(
+                "ID: " + b.id +
+                " | " + b.title +
+                " | Author: " + b.author +
+                " | Category: " + b.category +
+                " | Price: Rs." + b.price +
+                " | Stock: " + b.stock
+            );
+        }
+    }
+
+    static void searchBook() {
+        sc.nextLine();
+
+        System.out.print("\nEnter book title/author/category: ");
+        String search = sc.nextLine().toLowerCase();
+
+        boolean found = false;
+
+        for (Book b : books) {
+            if (b.title.toLowerCase().contains(search)
+                    || b.author.toLowerCase().contains(search)
+                    || b.category.toLowerCase().contains(search)) {
+
+                System.out.println(
+                    b.id + " - " + b.title +
+                    " | " + b.author +
+                    " | Rs." + b.price +
+                    " | Stock: " + b.stock
+                );
+
+                found = true;
+            }
+        }
+
+        if (!found)
+            System.out.println("Book not found!");
+    }
