@@ -1,0 +1,43 @@
+static void checkout() {
+        if (cart.isEmpty()) {
+            System.out.println("\nCart is empty!");
+            return;
+        }
+
+        double total = 0;
+
+        for (int i = 0; i < cart.size(); i++) {
+            Book b = cart.get(i);
+            int qty = quantities.get(i);
+            total += b.price * qty;
+        }
+
+        System.out.println("\n========== CHECKOUT ==========");
+        System.out.println("Total Amount: Rs." + total);
+
+        System.out.print("Confirm payment? (yes/no): ");
+        String answer = sc.next();
+
+        if (answer.equalsIgnoreCase("yes")) {
+            for (int i = 0; i < cart.size(); i++) {
+                Book b = cart.get(i);
+                int qty = quantities.get(i);
+                b.stock -= qty;
+            }
+
+            System.out.println("\nPayment Successful!");
+            System.out.println("Order Confirmed!");
+            System.out.println("Order Status: PENDING");
+
+            System.out.println("Order Status Flow:");
+            System.out.println(
+                "PENDING -> CONFIRMED -> SHIPPED -> DELIVERED"
+            );
+
+            cart.clear();
+            quantities.clear();
+
+        } else {
+            System.out.println("Order cancelled.");
+        }
+    }
