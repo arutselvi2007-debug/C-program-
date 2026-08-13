@@ -1,0 +1,33 @@
+static void addToCart() {
+        displayBooks();
+
+        System.out.print("\nEnter Book ID: ");
+        int id = sc.nextInt();
+
+        Book selected = null;
+
+        for (Book b : books) {
+            if (b.id == id) {
+                selected = b;
+                break;
+            }
+        }
+
+        if (selected == null) {
+            System.out.println("Invalid Book ID!");
+            return;
+        }
+
+        System.out.print("Enter quantity: ");
+        int qty = sc.nextInt();
+
+        if (qty <= 0 || qty > selected.stock) {
+            System.out.println("Insufficient stock!");
+            return;
+        }
+
+        cart.add(selected);
+        quantities.add(qty);
+
+        System.out.println("Book added to cart successfully!");
+    }
