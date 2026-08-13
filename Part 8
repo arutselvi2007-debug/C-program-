@@ -1,0 +1,72 @@
+public static void main(String[] args) {
+        addBooks();
+
+        System.out.println("======================================");
+        System.out.println("       WELCOME TO BOOKMART");
+        System.out.println("      ONLINE BOOK MANAGEMENT");
+        System.out.println("======================================");
+
+        System.out.print("\nEnter Username: ");
+        String username = sc.next();
+
+        System.out.print("Enter Password: ");
+        String password = sc.next();
+
+        System.out.println("\nLogin Successful!");
+        System.out.println("Welcome " + username);
+
+        int choice;
+
+        do {
+            System.out.println("\n========== BOOKMART MENU ==========");
+            System.out.println("1. View Books");
+            System.out.println("2. Search Books");
+            System.out.println("3. Add Book to Cart");
+            System.out.println("4. View Cart");
+            System.out.println("5. Checkout");
+            System.out.println("6. Give Review");
+            System.out.println("7. Exit");
+
+            System.out.print("Enter your choice: ");
+            choice = sc.nextInt();
+
+            switch (choice) {
+                case 1:
+                    displayBooks();
+                    break;
+
+                case 2:
+                    searchBook();
+                    break;
+
+                case 3:
+                    addToCart();
+                    break;
+
+                case 4:
+                    viewCart();
+                    break;
+
+                case 5:
+                    checkout();
+                    break;
+
+                case 6:
+                    reviewBook();
+                    break;
+
+                case 7:
+                    System.out.println(
+                        "\nThank you for using BookMart!"
+                    );
+                    break;
+
+                default:
+                    System.out.println("Invalid choice!");
+            }
+
+        } while (choice != 7);
+
+        sc.close();
+    }
+}
